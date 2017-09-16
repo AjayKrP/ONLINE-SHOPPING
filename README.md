@@ -8,3 +8,6 @@ Then install ONLINE-SHOPPING by using
 
 Then run it by using 
 >npm start
+
+Then go to your browser and type
+>http://localhost:3000
