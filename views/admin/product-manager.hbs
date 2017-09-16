@@ -1,0 +1,41 @@
+{{#if products}}
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <ul class="list-group">
+                {{#each products}}
+                    <li class="list-group-item">
+                        <span class="badge">{{this.qty}}</span>
+                        <strong>{{ this.title }}</strong>
+                        <span class="label label-success"><i class="fa fa-inr" aria-hidden="true"></i>{{this.price}}</span>
+                        <div class="btn-group">
+                            <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action<span class="caret"></span> </button>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Remove by 1</a> </li>
+                                <li><a href="#">Remobe all</a> </li>
+                            </ul>
+                        </div>
+                        <a href="/admin/delete/{{this._id}}" class="btn btn-xs pull-right danger" role="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+{{ else }}
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+            <div class="container text-center">
+                <div class="logo-404">
+                    <a href="/"><img src="/images/home/logo.png" alt="" /></a>
+                </div>
+                <div class="content-404">
+                    <img src="/images/404/404.png" class="img-responsive" alt="" />
+                    <h1><b>OPPS!</b> Cart is completely empty</h1>
+                    <h2><a href="/">Bring me back Home</a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{/if}}
+

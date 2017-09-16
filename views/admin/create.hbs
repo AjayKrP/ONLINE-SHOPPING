@@ -1,0 +1,67 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1><i class="fa fa-cart-plus" aria-hidden="true"></i> Add Item to Cart</h1>
+        {{#if hasError}}
+            <div class="alert alert-danger">
+                {{#each messages}}
+                    <p>{{this}}</p>
+                {{/each}}
+            </div>
+        {{/if}}
+        <form action="/admin/create" method="post" enctype="multipart/form-data">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="imagePath">Image Path</label>
+                    <div class="imagepath">
+                        <input type="file" name="file"  class="form-control" >
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label for="category">Category</label>
+                        <select title="used for category" name='category' class="selectpicker" multiple>
+                            <option value="mens">Men</option>
+                            <option value="womens">Womens</option>
+                            <option value="sportswear">Sportswear</option>
+                            <option value="kids">Kids</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="households">Households</option>
+                            <option value="interiors">Interiors</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="bags">Bags</option>
+                            <option value="shoes">Shoes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" min="1" class="form-control" name="quantity" id="quantity" aria-describedby="nameHelp">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" id="price" name="price" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                <button type="submit" class="btn btn-block btn-success">Create Item</button>
+            </div>
+        </form>
+    </div>
+</div>
