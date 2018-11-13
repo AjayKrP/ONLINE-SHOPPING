@@ -1,4 +1,4 @@
-# ONLINE-SHOPPING
+# Online-Shopping-and-Recommendation-System
 
 First Start your mongodb server by using
 >sudo systemctl start mongod
